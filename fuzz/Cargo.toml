@@ -9,7 +9,7 @@ edition = "2018"
 cargo-fuzz = true
 
 [dependencies]
-libfuzzer-sys = "0.4.1"
+libfuzzer-sys = { git = "https://github.com/AFLplusplus/LibAFL", branch = "libfuzzer", features = ["arbitrary-derive"], package = "libafl_libfuzzer" }
 
 [dependencies.regex]
 path = ".."
