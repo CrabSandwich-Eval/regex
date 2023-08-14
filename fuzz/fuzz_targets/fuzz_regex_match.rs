@@ -1,5 +1,5 @@
 #![no_main]
-use libfuzzer_sys::fuzz_target;
+use cargo_libafl_helper::fuzz_target;
 
 fuzz_target!(|data: &[u8]| {
     if data.len() < 2 {
