@@ -1,13 +1,13 @@
 #!/bin/bash
 
-docker build . -t regex_cargo_libafl
+docker build . -t regex_libfuzzer
 
 for i in {0..7}
 do
-  docker run -t --name regex_cargo_libafl-"$i" -d regex_cargo_libafl "/work/image/fuzz/fuzz.sh" "cargo_libafl" $i
+  docker run -t --name regex_libfuzzer-"$i" -d regex_libfuzzer "/work/regex/fuzz/fuzz.sh" "libfuzzer" $i
 done
 
 for i in {0..7}
 do
-  docker wait regex_cargo_libafl-"$i"
+  docker wait regex_libfuzzer-"$i"
 done
