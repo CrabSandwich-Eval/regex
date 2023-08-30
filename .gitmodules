@@ -7,6 +7,6 @@
 	url = git@github.com:CrabSandwich-Eval/regex.git
 	branch = libfuzzer
 [submodule "libafl_libfuzzer"]
-	path = regex
+	path = libafl_libfuzzer
 	url = git@github.com:CrabSandwich-Eval/regex.git
 	branch = libafl_libfuzzer
