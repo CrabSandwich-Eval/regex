@@ -1,0 +1,12 @@
+[submodule "cargo_libafl"]
+	path = cargo_libafl
+	url = git@github.com:CrabSandwich-Eval/regex.git
+	branch = cargo_libafl
+[submodule "libfuzzer"]
+	path = libfuzzer
+	url = git@github.com:CrabSandwich-Eval/regex.git
+	branch = libfuzzer
+[submodule "libafl_libfuzzer"]
+	path = regex
+	url = git@github.com:CrabSandwich-Eval/regex.git
+	branch = libafl_libfuzzer
