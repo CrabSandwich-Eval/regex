@@ -21,13 +21,13 @@ RUN rustup component add --toolchain nightly-2022-12-20 llvm-tools-preview
 
 # Copy the project
 RUN mkdir /work
-COPY . /work/image
-WORKDIR /work/image/fuzz
+COPY . /work/regex
+WORKDIR /work/regex/fuzz
 
 # Build the fuzzer
-RUN cargo install --git https://github.com/CrabSandwich-Eval/cargo-libafl --branch no_tui
+RUN cargo install --git https://github.com/CrabSandwich-Eval/cargo-libafl --rev 9c475ed676c71d5d49cc50d5e08943783bdcd513
 RUN cargo libafl build
-RUN cp ./target/x86_64-unknown-linux-gnu/release/fuzz_regex_match ./image
+RUN cp ./target/x86_64-unknown-linux-gnu/release/fuzz_regex_match ./regex
 
 # Gather seeds && make corpus dir && make coverage result dir
 RUN mkdir seeds && echo a > seeds/a
